@@ -1,0 +1,16 @@
+<h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <label for="login-email">Email:</label>
+  <input id="login-email" formControlName="email" type="email" placeholder="Enter your email">
+  <div class="error" *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+    * Email is required
+  </div>
+
+  <label for="login-password">Password:</label>
+  <input id="login-password" formControlName="password" type="password" placeholder="Enter your password">
+  <div class="error" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+    * Password must be at least 6 characters
+  </div>
+
+  <button type="submit">Login</button>
+</form>
