@@ -7,10 +7,10 @@ export class AuthService {
   private users = new Map<string, string>();
 
   signup(email: string, password: string) {
-    this.users.set(email, password);
-  }
+  localStorage.setItem(email, password); // Store credentials persistently
+}
 
-  login(email: string, password: string): boolean {
-    return this.users.get(email) === password;
-  }
+login(email: string, password: string): boolean {
+  return localStorage.getItem(email) === password; // Check stored credentials
+}
 }

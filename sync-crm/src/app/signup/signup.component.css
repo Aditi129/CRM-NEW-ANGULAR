@@ -1,35 +1,76 @@
+/* Consistent Background */
+body {
+  font-family: Arial, sans-serif;
+  background: #e3f2fd; /* Light blue background matching main page */
+  margin: 0;
+  padding: 0;
+}
+
+/* Centered Form */
 form {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 350px; /* Slightly larger for better spacing */
   margin: auto;
-  padding: 20px;
+  padding: 25px;
   background: white;
-  border-radius: 5px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Labels */
 label {
   font-weight: bold;
   margin-top: 10px;
+  color: #333; /* Darker text for readability */
 }
 
+/* Input Fields */
 input {
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #007bff;
   border-radius: 5px;
+  font-size: 16px;
 }
 
+/* Buttons */
 button {
   margin-top: 15px;
-  padding: 10px;
-  background: #28a745;
+  padding: 12px;
+  background: #ff8800; /* Matches CTA button in the hero section */
   color: white;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
 }
 
 button:hover {
-  background: #218838;
+  background: #f4b400; /* Gradient effect */
+}
+
+/* Forgot Password Link */
+.forgot-password {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Consistent Error Styling */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }

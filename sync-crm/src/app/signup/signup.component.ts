@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';  // Import Router
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
@@ -16,16 +16,23 @@ export class SignupComponent {
 
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.signupForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      username: ['', [Validators.required, Validators.minLength(3)]], // Username validation
+      email: ['', [Validators.required, Validators.email]], // Email validation
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]], // 10-digit phone number validation
+      password: ['', [Validators.required, Validators.minLength(6)]] // Password validation
     });
   }
 
   signup() {
-    const { email, password } = this.signupForm.value;
+    if (this.signupForm.invalid) {
+      alert('❌ Please enter valid details.');
+      return;
+    }
 
-    this.authService.signup(email, password);
-    alert('✅ Signup successful! Redirecting to login...');
+    const { username, email, phone, password } = this.signupForm.value;
+
+    this.authService.signup(email, password); // Storing email & password
+    alert(`✅ Signup successful! Welcome, ${username}. Redirecting to login...`);
     this.router.navigate(['/login']);  // Redirect to login page after signup
   }
 }

@@ -32,4 +32,9 @@ export class LoginComponent {
       alert('❌ Invalid credentials. Please try again.');
     }
   }
+
+navigateToForgotPassword() {
+  console.log('Navigating to Forgot Password...');
+  this.router.navigate(['/forgot-password']);
+}
 }
