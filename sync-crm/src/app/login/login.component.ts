@@ -23,15 +23,15 @@ export class LoginComponent {
   }
 
   login() {
-    const { email, password } = this.loginForm.value;
+  const { email, password } = this.loginForm.value;
 
-    if (this.authService.login(email, password)) {
-      alert('✅ Login successful!');
-      this.router.navigate(['/']);  // Redirect to home page
-    } else {
-      alert('❌ Invalid credentials. Please try again.');
-    }
+  if (this.authService.login(email, password)) {
+    alert('✅ Login successful! Redirecting to dashboard...');
+    this.router.navigate(['/dashboard']); // Redirect to dashboard
+  } else {
+    alert('❌ Invalid credentials. Please try again.');
   }
+}
 
 navigateToForgotPassword() {
   console.log('Navigating to Forgot Password...');
