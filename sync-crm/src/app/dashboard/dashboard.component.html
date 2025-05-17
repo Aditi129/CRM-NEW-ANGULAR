@@ -1,10 +1,53 @@
-<h2>Welcome to Your Dashboard</h2>
-<p>WELCOME !</p>
 
-<nav>
-  <ul>
-    <li><a routerLink="/profile">Profile</a></li>
-    <li><a routerLink="/settings">Settings</a></li>
-    <li><a (click)="logout()">Logout</a></li>
-  </ul>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <h2>Dashboard</h2>
+    <div class="navbar-links">
+        <button (click)="navigateTo('settings')">Settings</button>
+        <button (click)="logout()">Logout</button>
+    </div>
 </nav>
+
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+<aside class="sidebar">
+    <h2>SYNC</h2>
+    <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/leads">Leads</a></li> <!-- linked to LeadsComponent -->
+        <li><a routerLink="/companies">Companies</a></li>
+        <li><a routerLink="/contacts">Contacts</a></li>
+    </ul>
+</aside>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-content">
+        <h2>Welcome to Your Dashboard !</h2>
+       
+
+        <!-- Quick Access Section -->
+<div class="quick-links">
+    <h3>Quick Access</h3>
+    <button (click)="navigateTo('leads')">View Leads</button>
+    <button (click)="navigateTo('companies')">View Companies</button>
+    <button (click)="navigateTo('contacts')">View Contacts</button> <!-- New Button -->
+</div>
+
+        <!-- Recent Activities -->
+        <div class="recent-activities">
+            <h3>Recent Activities</h3>
+            <ul>
+                <li *ngFor="let activity of activities">{{ activity }}</li>
+            </ul>
+        </div>
+
+        <!-- Dashboard Overview -->
+        <div class="dashboard-stats">
+            <h3>Dashboard Overview</h3>
+            <p><strong>Tasks Completed:</strong> {{ taskCount }}</p>
+            <p><strong>Leads Processed:</strong> {{ leadCount }}</p>
+            <p><strong>Companies Managed:</strong> {{ companyCount }}</p>
+        </div>
+    </main>
+</div>

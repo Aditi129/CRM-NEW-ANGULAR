@@ -1,0 +1,68 @@
+.lead-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.lead-input input {
+    padding: 10px;
+    width: 20%;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+.lead-input button {
+    padding: 10px;
+    background: #ff8800;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.lead-input button:hover {
+    background: #f4b400;
+}
+
+/* Leads Table */
+.lead-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lead-table th, .lead-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.lead-table th {
+    background: #007bff;
+    color: white;
+}
+
+.edit-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit-btn:hover {
+    background: #218838;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}

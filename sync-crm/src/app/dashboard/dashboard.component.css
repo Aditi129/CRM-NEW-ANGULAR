@@ -1,25 +1,136 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  text-align: center;
+/* Navbar */
+.navbar {
+    background: #5a341c; /* Matching theme */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+/* Navbar Links (Right-Aligned) */
+.navbar-links {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Pushes items to the right */
 }
 
-nav ul li {
-  display: inline;
-  margin: 10px;
+.navbar-links button {
+    padding: 8px 16px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
 
-nav ul li a {
-  text-decoration: none;
-  font-size: 18px;
-  color: #007bff;
+.navbar-links button:hover {
+    background: #c82333;
+}
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #b47328;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    text-align: center; /* Centers all sidebar content */
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+/* Center the "SYNC" Title */
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 30px; /* Adds spacing between title and menu */
+    font-weight: bold;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    display: block; /* Ensures full clickable area */
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background: #ff8800;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+
+/* Main Layout */
+.dashboard-layout {
+    display: flex;
+    margin-left: 260px; /* Ensures space for sidebar */
+    padding: 20px;
+}
+
+.dashboard-content {
+    flex: 1;
+}
+
+/* Quick Links */
+.quick-links {
+    margin-top: 20px;
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.quick-links button {
+    background: #ff8800;
+    padding: 10px;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quick-links button:hover {
+    background: #f4b400;
+}
+
+/* Recent Activities */
+.recent-activities {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activities ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Dashboard Stats */
+.dashboard-stats {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }

@@ -6,14 +6,25 @@ import { Router } from '@angular/router';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
+  
 })
 export class DashboardComponent {
-  username = 'User'; // You can dynamically fetch this from authentication or local storage
+  email: string = localStorage.getItem('email') || 'User'; // Display stored email
+  activities: string[] = ['Viewed leads', 'Updated company details', 'Checked deadlines'];
+  
+  taskCount = 4; // Matches the image
+  leadCount = 29;
+  companyCount = 4;
 
   constructor(private router: Router) {}
 
+  navigateTo(section: string) {
+    this.router.navigate([`/${section}`]);
+  }
+
   logout() {
     alert('❌ Logging out...');
-    this.router.navigate(['/login']); // Redirect to login after logout
+    localStorage.removeItem('email');
+    this.router.navigate(['/login']);
   }
 }
