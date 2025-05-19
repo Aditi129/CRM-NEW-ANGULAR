@@ -1,18 +1,27 @@
-.lead-input {
+.container {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Company Input */
+.company-input {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
     justify-content: center;
 }
 
-.lead-input input {
+.company-input input {
     padding: 10px;
     width: 20%;
     border: 2px solid #007bff;
     border-radius: 5px;
 }
 
-.lead-input button {
+.company-input button {
     padding: 10px;
     background: #ff8800;
     color: white;
@@ -21,22 +30,22 @@
     cursor: pointer;
 }
 
-.lead-input button:hover {
+.company-input button:hover {
     background: #f4b400;
 }
 
-/* Leads Table */
-.lead-table {
+/* Companies Table */
+.company-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.lead-table th, .lead-table td {
+.company-table th, .company-table td {
     border: 1px solid #ccc;
     padding: 10px;
 }
 
-.lead-table th {
+.company-table th {
     background: #007bff;
     color: white;
 }
@@ -65,12 +74,4 @@
 
 .delete-btn:hover {
     background: #c82333;
-}
-
-.container {
-    border: 2px solid black; /* ✅ Adds border */
-    padding: 15px;
-    border-radius: 8px; /* ✅ Optional rounded corners */
-    background: white;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* ✅ Soft shadow */
 }

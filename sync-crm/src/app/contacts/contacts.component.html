@@ -1,0 +1,37 @@
+<div class="container"> <!-- Wrapper with border -->
+    <h2>Contacts Management</h2>
+
+    <!-- Add New Contact -->
+    <form [formGroup]="contactForm" (ngSubmit)="addContact()" class="contact-input">
+        <input type="text" formControlName="name" placeholder="Enter Name" required>
+        <input type="text" formControlName="email" placeholder="Enter Email" required>
+        <input type="text" formControlName="phone" placeholder="Enter Phone Number" required>
+        <input type="text" formControlName="company" placeholder="Enter Company" required>
+        <button type="submit">Add Contact</button>
+    </form>
+
+    <!-- Contacts Table -->
+    <table class="contact-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contacts; let i = index">
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phone }}</td>
+                <td>{{ contact.company }}</td>
+                <td>
+                    <button class="edit-btn" (click)="editContact(i)">Edit</button>
+                    <button class="delete-btn" (click)="deleteContact(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

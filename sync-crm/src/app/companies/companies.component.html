@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Companies Management</h2>
+
+    <!-- Add New Company -->
+    <form [formGroup]="companyForm" (ngSubmit)="addCompany()" class="company-input">
+        <input type="text" formControlName="name" placeholder="Enter Company Name" required>
+        <input type="text" formControlName="industry" placeholder="Enter Industry" required>
+        <input type="text" formControlName="email" placeholder="Enter Email" required>
+        <input type="text" formControlName="contact" placeholder="Enter Contact Number" required> <!-- New Field -->
+        <input type="text" formControlName="address" placeholder="Enter Address" required> <!-- New Field -->
+        <button type="submit">Add Company</button>
+    </form>
+
+    <!-- Companies Table -->
+    <table class="company-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Industry</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let company of companies; let i = index">
+                <td>{{ company.name }}</td>
+                <td>{{ company.industry }}</td>
+                <td>{{ company.email }}</td>
+                <td>{{ company.contact }}</td>
+                <td>{{ company.address }}</td>
+                <td>
+                    <button class="edit-btn" (click)="editCompany(i)">Edit</button>
+                    <button class="delete-btn" (click)="deleteCompany(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

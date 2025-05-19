@@ -1,32 +1,34 @@
-<h2>Leads Management</h2>
+<div class="container"> <!-- Add this wrapper -->
+    <h2>Leads Management</h2>
+    
+    <!-- Add New Lead -->
+    <form [formGroup]="leadForm" (ngSubmit)="addLead()" class="lead-input">
+        <input type="text" formControlName="name" placeholder="Enter Name" required>
+        <input type="text" formControlName="company" placeholder="Enter Company" required>
+        <input type="text" formControlName="email" placeholder="Enter Email" required>
+        <button type="submit">Add Lead</button>
+    </form>
 
-<!-- Add New Lead -->
-<form [formGroup]="leadForm" (ngSubmit)="addLead()">
-    <input type="text" formControlName="name" placeholder="Enter Name">
-    <input type="text" formControlName="company" placeholder="Enter Company">
-    <input type="text" formControlName="email" placeholder="Enter Email">
-    <button type="submit">Add Lead</button>
-</form>
-
-<!-- Leads Table -->
-<table class="lead-table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Company</th>
-            <th>Email</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let lead of leads; let i = index">
-            <td>{{ lead.name }}</td>
-            <td>{{ lead.company }}</td>
-            <td>{{ lead.email }}</td>
-            <td>
-                <button class="edit-btn" (click)="editLead(i)">Edit</button>
-                <button class="delete-btn" (click)="deleteLead(i)">Delete</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <!-- Leads Table -->
+    <table class="lead-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lead of leads; let i = index">
+                <td>{{ lead.name }}</td>
+                <td>{{ lead.company }}</td>
+                <td>{{ lead.email }}</td>
+                <td>
+                    <button class="edit-btn" (click)="editLead(i)">Edit</button>
+                    <button class="delete-btn" (click)="deleteLead(i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

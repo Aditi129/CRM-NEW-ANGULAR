@@ -5,6 +5,10 @@ import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LeadsComponent } from './leads/leads.component'; // Import Leads Component
+import { CompaniesComponent } from './companies/companies.component';
+import { ContactsComponent } from './contacts/contacts.component';
+
+
 
 export const routes: Routes = [
   { path: '', component: MainPageComponent }, // Home/Main Page
@@ -12,5 +16,7 @@ export const routes: Routes = [
   { path: 'signup', component: SignupComponent }, // Signup Page
   { path: 'forgot-password', component: ForgotPasswordComponent }, // Forgot Password Page
   { path: 'dashboard', component: DashboardComponent }, // Dashboard Page
-  { path: 'leads', component: LeadsComponent } //  linked to LeadsComponent
+  { path: 'leads', component: LeadsComponent }, //  linked to LeadsComponent
+  { path: 'companies', component: CompaniesComponent },
+  { path: 'contacts', component: ContactsComponent } 
 ];
